@@ -22,4 +22,4 @@ RUN cabal new-build
 RUN strip -s ./dist-newstyle/build/x86_64-linux/ghc-8.4.3/elm-0.19.1/x/elm/build/elm/elm
 
 FROM scratch
-COPY --from=builder ./dist-newstyle/build/x86_64-linux/ghc-8.4.3/elm-0.19.1/x/elm/build/elm/elm /usr/local/bin/elm
+COPY --from=builder /tmp/compiler/dist-newstyle/build/x86_64-linux/ghc-8.4.3/elm-0.19.1/x/elm/build/elm/elm /usr/local/bin/elm
